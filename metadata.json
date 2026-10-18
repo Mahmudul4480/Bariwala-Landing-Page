@@ -1,6 +1,6 @@
 {
-  "name": "Bariwala",
-  "description": "বাড়িওয়ালা - বাড়িভাড়ার হিসাব এবং ভাড়াটিয়া ব্যবস্থাপনা নিশ্চিন্তে ও নিরাপদে",
+  "name": "Rentora",
+  "description": "Rentora — rent ledger and tenant records for landlords, in any country",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

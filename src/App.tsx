@@ -86,7 +86,7 @@ export default function App() {
       name: "মতিউর রহমান",
       location: "উত্তরা, ঢাকা",
       role: "সম্মানিত বাড়িওয়ালা (১০টি ফ্ল্যাট)",
-      quote: "বাড়িওয়ালা অ্যাপ দিয়ে এখন প্রতিটি ফ্ল্যাটের ভাড়া এবং এডভান্সের হিসাব একদম আঙুলের ডগায় থাকে। ভাড়াটিয়ার সাথে কোনো ভুল বোঝাবুঝি বা খাতা হারিয়ে যাওয়ার টেনশন আর একদমই নেই!",
+      quote: "Rentora দিয়ে এখন প্রতিটি ফ্ল্যাটের ভাড়া এবং এডভান্সের হিসাব একদম আঙুলের ডগায় থাকে। ভাড়াটিয়ার সাথে কোনো ভুল বোঝাবুঝি বা খাতা হারিয়ে যাওয়ার টেনশন আর একদমই নেই!",
       stars: 5
     },
     {
@@ -94,7 +94,7 @@ export default function App() {
       name: "ডা. কামরুল হাসান",
       location: "ধানমণ্ডি, ঢাকা",
       role: "অ্যাপার্টমেন্ট ওনার (৬টি ফ্ল্যাট)",
-      quote: "হাসপাতালে ব্যস্ত ডিউটি সামলে ভাড়া আদায়ের তাগাদা দেওয়া আমার জন্য খুবই কঠিন ছিল। বাড়িওয়ালার অটো-রিমাইন্ডার এখন ভদ্র ভাষায় এই কাজটি নিমিষেই করে দেয়, এটি একটি লাইফসেভার!",
+      quote: "হাসপাতালে ব্যস্ত ডিউটি সামলে ভাড়া আদায়ের তাগাদা দেওয়া আমার জন্য খুবই কঠিন ছিল। Rentora-র অটো-রিমাইন্ডার এখন ভদ্র ভাষায় এই কাজটি নিমিষেই করে দেয়, এটি একটি লাইফসেভার!",
       stars: 5
     },
     {
@@ -118,8 +118,8 @@ export default function App() {
   const faqs: FaqItem[] = [
     {
       id: 1,
-      question: "বাড়িওয়ালা অ্যাপের মাধ্যমে আমার তথ্য কতটা সুরক্ষিত থাকবে?",
-      answer: "বাড়িওয়ালা অ্যাপ আপনার ব্যক্তিগত ও ভাড়া সংক্রান্ত সকল তথ্য বিশ্বের সবচেয়ে নিরাপদ এবং সুরক্ষিত ক্লাউড সার্ভারে এনক্রিপ্ট করে সংরক্ষণ করে রাখে। আপনার অনুমতি ছাড়া এই তথ্য অন্য কেউ দেখতে পারবে না। আমরা আন্তর্জাতিক ডেটা সিকিউরিটি স্ট্যান্ডার্ড কঠোরভাবে মেনে চলি।"
+      question: "Rentora-তে আমার তথ্য কতটা সুরক্ষিত থাকবে?",
+      answer: "Rentora আপনার ব্যক্তিগত ও ভাড়া সংক্রান্ত সকল তথ্য সুরক্ষিত ক্লাউড সার্ভারে এনক্রিপ্ট করে রাখে। আপনার অনুমতি ছাড়া এই তথ্য অন্য কেউ দেখতে পারবে না। আমরা আন্তর্জাতিক ডেটা সিকিউরিটি স্ট্যান্ডার্ড মেনে চলি।"
     },
     {
       id: 2,
@@ -144,7 +144,7 @@ export default function App() {
   ];
 
   useEffect(() => {
-    const storedLeads = localStorage.getItem('bariwala_leads');
+    const storedLeads = localStorage.getItem('rentora_leads');
     if (storedLeads) {
       try {
         const parsed = JSON.parse(storedLeads) as Lead[];
@@ -224,10 +224,10 @@ export default function App() {
     };
 
     try {
-      const stored = localStorage.getItem('bariwala_leads');
+      const stored = localStorage.getItem('rentora_leads');
       const list = stored ? (JSON.parse(stored) as Lead[]) : [];
       list.push(newLead);
-      localStorage.setItem('bariwala_leads', JSON.stringify(list));
+      localStorage.setItem('rentora_leads', JSON.stringify(list));
       setLeadCount(148 + list.length);
     } catch (e) {
       console.error(e);
@@ -260,7 +260,7 @@ export default function App() {
             </div>
             <div>
               <span className="text-2xl font-bold tracking-tight text-blue-950 flex items-center gap-1.5">
-                বাড়িওয়ালা <span className="text-xs bg-emerald-100 text-emerald-800 font-medium px-2 py-0.5 rounded-full">SaaS</span>
+                Rentora
               </span>
               <p className="text-[10px] text-slate-500 tracking-wider uppercase font-medium">নিশ্চিন্ত ও নিরাপদ বাড়িভাড়া হিসাব</p>
             </div>
@@ -466,7 +466,7 @@ export default function App() {
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/60 text-xs text-blue-900 font-bold flex items-center gap-1.5">
                 <span className="w-2 h-2 bg-rose-500 rounded-full"></span>
-                বাড়িওয়ালা সমাধান: ২-সেকেন্ডে অটোমেটিক ডিজিটাল রসিদ
+                Rentora সমাধান: ২-সেকেন্ডে অটোমেটিক ডিজিটাল রসিদ
               </div>
             </div>
 
@@ -486,7 +486,7 @@ export default function App() {
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/60 text-xs text-blue-900 font-bold flex items-center gap-1.5">
                 <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                বাড়িওয়ালা সমাধান: ছবিসহ ড্যামেজ হিস্ট্রি সেভ সিস্টেম
+                Rentora সমাধান: ছবিসহ ড্যামেজ হিস্ট্রি সেভ সিস্টেম
               </div>
             </div>
 
@@ -506,7 +506,7 @@ export default function App() {
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/60 text-xs text-blue-900 font-bold flex items-center gap-1.5">
                 <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                বাড়িওয়ালা সমাধান: সুরক্ষিত হোয়াটসঅ্যাপ রিমাইন্ডার
+                Rentora সমাধান: সুরক্ষিত হোয়াটসঅ্যাপ রিমাইন্ডার
               </div>
             </div>
 
@@ -522,7 +522,7 @@ export default function App() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider block mb-2">ফিচার ও সুবিধা</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-950">
-              কেন &apos;বাড়িওয়ালা&apos; অ্যাপ ব্যবহার করবেন?
+              কেন Rentora ব্যবহার করবেন?
             </h2>
             <div className="w-20 h-1.5 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
           </div>
@@ -585,7 +585,7 @@ export default function App() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent flex items-end p-5">
                     <p className="text-white font-bold text-base sm:text-lg leading-snug">
-                      "বাড়িওয়ালা অ্যাপ ব্যবহারের পর থেকে খাতা-কলম ঝেড়ে ফেলে শান্তিতে রাতে ঘুমাতে পারি।"
+                      "Rentora ব্যবহারের পর থেকে খাতা-কলম ঝেড়ে ফেলে শান্তিতে রাতে ঘুমাতে পারি।"
                     </p>
                   </div>
                 </div>
@@ -733,7 +733,7 @@ export default function App() {
                 <Building2 className="w-10 h-10 text-emerald-400" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-2">বাড়িওয়ালা প্রিমিয়াম মেম্বারশিপ</h3>
+              <h3 className="text-2xl font-bold mb-2">Rentora প্রিমিয়াম</h3>
               
               {/* Massive Pricing Display */}
               <div className="my-6">
@@ -867,14 +867,14 @@ export default function App() {
       {/* FOOTER */}
       <footer className="bg-slate-950 py-8 text-slate-500 text-xs border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-          <p className="font-medium text-slate-400">বাড়িওয়ালা - বাড়িভাড়ার হিসাব রাখার সবচেয়ে সহজ বাংলা ডিজিটাল সমাধান</p>
-          <p>© ২০২৬ বাড়িওয়ালা। সর্বস্বত্ব সংরক্ষিত। এটি একটি লিমিটেড ডেমো এবং প্রোডাক্ট ভ্যালিডেশন পেজ (Smoke Test)।</p>
+          <p className="font-medium text-slate-400">Rentora — বাড়িভাড়ার হিসাব রাখার সহজ ডিজিটাল সমাধান</p>
+          <p>© ২০২৬ Rentora। সর্বস্বত্ব সংরক্ষিত। এটি একটি লিমিটেড ডেমো এবং প্রোডাক্ট ভ্যালিডেশন পেজ (Smoke Test)।</p>
         </div>
       </footer>
 
       {/* NEW: FLOATING ACTION BUTTON (FAB) FOR WHATSAPP */}
       <a 
-        href="https://wa.me/8801700000000?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%AC%E0%A6%BE%E0%A6%A1%E0%A6%BC%E0%A6%BF%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B2%E0%A6%BE%20%E0%A6%8F%E0%A6%AA%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A7%87%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87"
+        href="https://wa.me/8801700000000?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20Rentora%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AA%20%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A7%87%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87"
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full p-4 shadow-2xl flex items-center justify-center cursor-pointer pulse-glow group transition-transform hover:scale-110"
@@ -915,7 +915,7 @@ export default function App() {
                     <X className="w-5 h-5" />
                   </button>
                   <h3 className="text-xl font-bold pr-8">
-                    আপনার বাড়িওয়ালা অ্যাপ সেটআপ করার জন্য বুকিং স্লট নিন
+                    Rentora সেটআপের জন্য বুকিং স্লট নিন
                   </h3>
                   <p className="text-blue-200 text-xs mt-1.5 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span>
@@ -1068,7 +1068,7 @@ export default function App() {
                       {/* Extra Trust Info */}
                       <div className="bg-blue-50/50 rounded-xl p-3 border border-blue-100 flex items-start space-x-2.5 text-xs text-slate-600">
                         <Lock className="w-4 h-4 text-blue-800 flex-shrink-0 mt-0.5" />
-                        <span>আপনার ব্যক্তিগত তথ্য সম্পূর্ণ গোপন রাখা হবে। বাড়িওয়ালা অ্যাপ সুরক্ষিত ক্লাউড অবকাঠামো ব্যবহার করে।</span>
+                        <span>আপনার ব্যক্তিগত তথ্য সম্পূর্ণ গোপন রাখা হবে। Rentora সুরক্ষিত ক্লাউড অবকাঠামো ব্যবহার করে।</span>
                       </div>
 
                       {/* Actions */}
